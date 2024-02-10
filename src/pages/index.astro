@@ -1,0 +1,18 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ShowKeyUser from "../components/ShowKeyUser.astro";
+import MessageKeyUser from "../components/MessageKeyUser.astro";
+const response = await fetch(`http://localhost:3000/decrypted-message`);
+const data = await response.json();
+---
+
+<Layout title="Welcome to Astro.">
+  <main class="flex justify-center flex-col items-center m-4">
+    <div>
+      <h1 class="text-gray text-6xl">Insive SpA</h1>
+    </div>
+
+    <ShowKeyUser stringKey={data.stringKey} />
+    <MessageKeyUser stringKey={data.stringKey} />
+  </main>
+</Layout>

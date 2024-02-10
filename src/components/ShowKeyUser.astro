@@ -1,0 +1,15 @@
+---
+// const response = await fetch(`http://localhost:3000/decrypted-message`);
+// const data = await response.json();
+// const randomUser = data.results
+interface Props{
+    stringKey:string;
+}
+const { stringKey }:Props = Astro.props;
+---
+<div class="  flex  p-5 m-16  text-3xl bg-gray-300 rounded flex-col items-center ">
+    <h3 class=" ">  Llave secreta</h3>
+    <div class=" animate-pulse bg-gray-400  flex items-center justify-center mt-4 p-4 rounded-sm ">
+        <span  >{stringKey}</span>
+    </div>
+</div>

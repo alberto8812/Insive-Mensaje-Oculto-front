@@ -1,0 +1,12 @@
+---
+interface Props{
+    stringKey:string;
+}
+const { stringKey }:Props = Astro.props;
+const response = await fetch(`http://localhost:3000/decrypted-message/${stringKey}`);
+const data = await response.json();
+---
+<div class="flex  p-5 m-16  text-3xl bg-gray-300 rounded ">
+    
+    <h1>{data.stringmessage}</h1>
+</div>
